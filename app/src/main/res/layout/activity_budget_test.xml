@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Question 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. What is the purpose of a budget?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+        <RadioGroup
+            android:id="@+id/q1Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tracking income and expenses"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Buying luxury items"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Avoiding all spending"/>
+        </RadioGroup>
+
+        <!-- Question 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. What should you prioritize when budgeting?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"/>
+        <RadioGroup
+            android:id="@+id/q2Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Needs before wants"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Wants before needs"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ignore both"/>
+        </RadioGroup>
+
+        <!-- Question 3 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. What is an important savings goal?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"/>
+        <RadioGroup
+            android:id="@+id/q3Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Emergency fund"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Expensive gadgets"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Luxury vacations"/>
+        </RadioGroup>
+
+        <!-- Question 4 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. Why is budgeting helpful?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"/>
+        <RadioGroup
+            android:id="@+id/q4Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Helps avoid debt"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Encourages overspending"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Makes money disappear"/>
+        </RadioGroup>
+
+        <!-- Question 5 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. How should you manage your budget over time?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"/>
+        <RadioGroup
+            android:id="@+id/q5Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Review and adjust regularly"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Never change it"/>
+            <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ignore your budget"/>
+        </RadioGroup>
+
+        <!-- Submit Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitTestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Test"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/background"
+            app:cornerRadius="12dp"
+            android:elevation="6dp"
+            android:layout_marginTop="32dp"/>
+    </LinearLayout>
+</ScrollView>

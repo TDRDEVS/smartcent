@@ -1,0 +1,486 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainDashboard">
+
+    <!-- Top Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/background"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        android:layout_alignParentTop="true"
+        app:contentInsetStart="16dp"
+        app:contentInsetEnd="16dp">
+
+        <!-- Dashboard Title -->
+        <TextView
+            android:id="@+id/dashboardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="start|center_vertical"/>
+
+        <!-- Profile Button -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/dashboardProfileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="View Profile"
+            android:layout_gravity="end|center_vertical"
+            app:shapeAppearanceOverlay="@style/CircleImageStyle"
+            app:strokeColor="@android:color/white"
+            app:strokeWidth="2dp"
+            android:layout_marginEnd="8dp"
+            android:padding="4dp"
+            android:elevation="2dp"/>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Scrollable Dashboard Content -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topAppBar"
+        android:layout_above="@id/navBar"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- WelcomeCard -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/welcomeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome back to SmartCent 🪙"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:paddingBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/expensesText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expenses: R0.00"
+                        android:textColor="@color/debt"
+                        android:textSize="16sp"
+                        android:drawablePadding="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/incomeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Income: R0.00"
+                        android:textColor="@color/credit"
+                        android:textSize="16sp"
+                        android:drawablePadding="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/goalsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Goals: R0.00"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:drawablePadding="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Actions Row -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@android:color/white"
+                app:strokeColor="@color/background"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <!-- Income -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/incomeButton"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/addincome"
+                            android:background="@drawable/nav_button_selector"
+                            android:scaleType="centerInside"
+                            android:contentDescription="Add Income"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Income"
+                            android:textSize="13sp"
+                            android:textColor="@color/background"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Progress -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/budgetProgressButton"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/progressicon"
+                            android:background="@drawable/nav_button_selector"
+                            android:scaleType="centerInside"
+                            android:contentDescription="Budget Progress"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Progress"
+                            android:textSize="13sp"
+                            android:textColor="@color/background"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Achievements -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/viewAchievements"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/badge_default"
+                            android:background="@drawable/nav_button_selector"
+                            android:scaleType="centerInside"
+                            android:contentDescription="View Achievements"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Achievements"
+                            android:textSize="13sp"
+                            android:textColor="@color/background"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- This Month Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/thisMonthCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/expensepic"
+                        android:contentDescription="Monthly Expenses"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:id="@+id/thisMonthText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View This Month's Expenses 💰"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- Study Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@android:color/white"
+                app:strokeColor="@color/background"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/studyImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/study"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Study Budgeting"/>
+
+                    <TextView
+                        android:id="@+id/Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SMARTCENT ACADEMY🧠"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/explain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learn how to budget for free by clicking the button below!"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="normal"/>
+                    <Button
+                        android:id="@+id/studyButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="Study About Budgeting"
+                        android:backgroundTint="@color/background"
+                        android:textColor="@android:color/white"
+                        android:layout_margin="12dp"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        android:padding="8dp"
+        android:background="@color/black"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <!-- Home -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/goHome"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/home1"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="Go Home"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Expense -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/addExButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/addexpense"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="Add Expense"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expense"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Category -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/category"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/category"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="Add Category"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Reports -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/ViewReports"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/report"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="View Reports"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reports"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Goals -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/setGoals"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/goal"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="Set Goals"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Goals"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Expense List -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/expenseListView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/expenselist"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="Expense List"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expenses"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Logout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/Logout"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/logout"
+                android:background="@drawable/nav_button_selector"
+                android:scaleType="fitCenter"
+                android:contentDescription="Logout"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

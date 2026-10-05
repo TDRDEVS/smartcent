@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DashboardText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+
+    <style name="CircleImageStyle">
+        <!-- Make the image fully rounded -->
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+
+        <!-- Optional: add stroke/border -->
+        <item name="strokeColor">@color/background</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+</resources>
